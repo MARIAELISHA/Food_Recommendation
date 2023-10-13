@@ -1,0 +1,32 @@
+{% extends 'design.html'%}
+{% block title %}Recommendations{% endblock %}
+{% block body %}
+
+<div class="container-fluid">
+	<h2>Recommendations for you</h2>
+</div>
+<hr>
+<br>
+
+	<div class="container-fluid">
+
+    <!-- food list -->
+    <div class="row">
+            {% if food_list %}
+                {% for food in food_list %}
+                    <div class="col-sm-2 col-md-2 ">
+                        <div class="thumbnail" style="border-radius: 22px 22px 22px 22px;">
+                            <center><h4>{{food.title}}</h4></center>
+                            <a href="{% url 'detail' food.id %}">
+                                <img src="{{ food.food_logo.url}}" class="img-responsive" style="border-radius: 22px 22px 22px 22px;">
+                            </a>
+<!--                            <center><h5>{{food.genre}}</h5></center>-->
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+</div>
+
+{% endblock %}
