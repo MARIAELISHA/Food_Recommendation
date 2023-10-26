@@ -1,0 +1,55 @@
+{% extends 'design.html'%}
+{% block body %}
+
+{% if not request.user.is_authenticated %}
+    <br>
+{% else %}
+    <center style="color:#fff"><h2>Welcome {{user.username}}!!</h2></center>
+{% endif %}
+
+<div class="container" >
+    <div class="col-xs-6 col-xs-offset-3">
+    	<form class="form-horizontal" role="search" method="get" action=''>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control input-lg " name="q" value="{{ request.GET.q }}" placeholder= "Search Food "/>
+                    <span class='input-group-btn'>
+                        <button class='button1' type='submit'>Search</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+ </div>
+
+
+<p style="text-align:left;">
+    <span style="float:right;">
+        <a href="{% url 'recommend' %}" class="btn"><button style="color:#fff;background-color:#4CAF50;padding:10px">Get Food Recommendation</button></a>
+    <h2>Food List</h2>
+    </span>
+</p>
+<hr>
+<br>
+
+<!-- Movie list -->
+    <div class="row" >
+            {% if food_list %}
+            {% for food in food_list %}
+                <div class="col-sm-2 col-md-2">
+                    <div class="thumbnail" style="border-radius: 22px 22px 22px 22px;">
+                        <center><h5>{{food.title}}</h5></center>
+                        <a href="{% url 'detail' food.id %}">
+                            <img src="{{ food.food_logo.url}}" class="img-responsive" style="border-radius: 22px 22px 22px 22px;">
+                        </a>
+                        <!-- <h5>{{movie.genre}}</h5> -->
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+        </div>
+
+</div>
+
+
+{% endblock %}

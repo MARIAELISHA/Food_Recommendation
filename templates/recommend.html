@@ -1,0 +1,79 @@
+{% extends 'design.html' %}
+{% load static %}
+{% block title %}Recommendations{% endblock title %}
+{% block main-content %}
+<style>
+    .recommendations-container {
+        background-image: url("{% static '/Recommend/images/banner/bg2.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        padding: 40px 0;
+        text-align: center;
+        min-height: 100vh;
+    }
+
+    .recommendation-form {
+        background: rgba(123, 120, 120, 0.9); /* Updated background color with slight opacity */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .btn-recommend {
+        background-color: #343535;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        color: #fff; /* Added text color for better visibility */
+    }
+
+    .btn-recommend:hover {
+        background-color: #1e8449;
+    }
+
+    .btn-recommend:focus {
+        box-shadow: none;
+    }
+</style>
+
+<div class="recommendations-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-10 col-md-6">
+                <div class="recommendation-form">
+                    <h2>Recommendations for you</h2>
+                    <form id="recommendationForm">
+                        <div class="form-group">
+                            <label for="textInput">Text Input:</label>
+                            <input type="text" class="form-control" id="textInput" placeholder="Enter text">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="photoInput">Upload a Photo:</label>
+                            <input type="file" class="form-control-file" id="photoInput">
+                        </div>
+                        <button type="button" class="btn btn-recommend" id="recommendButton">Recommend</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#recommendButton").click(function () {
+            // Retrieve user inputs
+            const textInput = $("#textInput").val();
+            // You can handle the photo upload here if needed
+
+            // Redirect to the recommendation page
+            window.location.href = "recommendation.html"; // Change to the actual recommendation page URL
+        });
+    });
+</script>
+{% endblock main-content %}
+

@@ -1,0 +1,68 @@
+{% extends 'design.html'%}
+{% load static %}
+
+{% block title%} HOME {% endblock title %}
+
+{% block banner_slider %}
+  <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src='{% static "/Recommend/images/banner/bg4.jpg" %}' class="d-block w-100" alt="background-image">
+      </div>
+      <div class="carousel-item">
+        <img src='{% static "/Recommend/images/banner/bg2.jpg" %}' class="d-block w-100" alt="background-image">
+      </div>
+      <div class="carousel-item">
+        <img src='{% static "/Recommend/images/banner/bg3.jpg" %}' class="d-block w-100" alt="background-image">
+      </div>
+    </div>
+  </div>
+{% endblock banner_slider %}
+
+{% block information %}
+<div class="container">
+  <div class="row bg-dark text-center p-5 text-white border-bottom shadow ">
+    <h1> Foodie Delight</h1>
+    <small class="fs-5 ">
+      Discover a world of flavors with Foodie Delight, your personal guide to gastronomic adventures. Our advanced AI-powered platform is designed to cater to your unique taste buds, offering personalized food and restaurant recommendations that will take your culinary experiences to new heights.
+
+      Whether you’re a fan of local delicacies or an explorer of international cuisines, Foodie Delight tailors its suggestions to match your preferences. From vegan to gluten-free, low-carb to high-protein, our app respects your dietary needs and suggests dishes that align with your lifestyle.
+      
+      But that’s not all! Foodie Delight also offers recipe suggestions for those days when you want to don the chef’s hat. Based on your pantry items and taste preferences, we’ll suggest recipes that you can whip up at home.
+      
+      Join us on this delicious journey as we redefine the way you discover and experience food. Dive into a world of flavors, explore new cuisines, and fall in love with food all over again. Welcome aboard, foodie! 🍽️🌍🍲</small>
+  </div>
+</div>
+{% endblock information %}
+
+{% block main-content %}
+<div class="container">
+  <h2 class="text-center">Foods</h2>
+  <br><br>
+
+  <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-row-duration="1s" data-row-delay="0.6s" 
+  style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+    <div class=" goodness foodimage">
+      <a href="#">
+        <div class="fooddemo">
+          <img src='{% static "Recommend/images/food1.jpg" %}' class="image-responsive" alt="...">
+          <p class="Foodie"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-row-duration="1s" data-row-delay="0.6s" 
+  style="animation-duration: 1s; animation-delay: 0.6s; animation-name: none;">
+    <div>
+      <a href="#">
+        <div class="fooddemo">
+          <img src='{% static "Recommend/images/food2.jpeg" %}' class="image-responsive" alt="...">
+          <p class="Foodie"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<br/><br/>    
+{% endblock main-content%}

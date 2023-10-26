@@ -1,0 +1,38 @@
+{% extends 'design.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+
+{% block main-content %}
+<style>
+    /* Custom CSS for styling the About Us page */
+    .team-member {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .team-member img {
+        max-width: 100%;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="text-center">About Project Team</h2>
+    <div class="row">
+        <div class="col-md-6 team-member">
+            <img src="{% static '/Recommend/images/Team/vinay.jpg' %}" class="img-fluid w-50 h-75" alt="Vinay Rawat">
+            <h4>Vinay Rawat</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lorem lacus. Vestibulum elementum massa nec purus lacinia, et sagittis nulla pretium.</p>
+        </div>
+        <div class="col-md-6 team-member">
+            <img src="{% static '/Recommend/images/Team/elisha.jpg' %}" class="img-fluid w-50 h-75" alt="Maria Elisha Monteiro">
+            <h4>Maria Elisha Monteiro</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non lorem lacus. Vestibulum elementum massa nec purus lacinia, et sagittis nulla pretium.</p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endblock main-content %}
